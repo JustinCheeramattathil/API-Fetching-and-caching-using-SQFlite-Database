@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webandcrafts/widgets/category_card.dart';
@@ -17,16 +18,54 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             const UpperUiComponent(),
-            Container(
-              height: size.height * 0.19,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0IiD-quR3hmxbkjht2IjwezglNTinO5UjKQ',
+            CarouselSlider(
+              items: [
+                Container(
+                  height: size.height * 0.16,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0IiD-quR3hmxbkjht2IjwezglNTinO5UjKQ',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  fit: BoxFit.cover,
                 ),
+                Container(
+                  height: size.height * 0.19,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0IiD-quR3hmxbkjht2IjwezglNTinO5UjKQ',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Container(
+                  height: size.height * 0.19,
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0IiD-quR3hmxbkjht2IjwezglNTinO5UjKQ',
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ],
+              options: CarouselOptions(
+                height: size.height * 0.19,
+                enlargeCenterPage: false,
+                autoPlay: true,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                pauseAutoPlayOnTouch: true,
+                onPageChanged: (index, reason) {},
               ),
             ),
             Padding(
