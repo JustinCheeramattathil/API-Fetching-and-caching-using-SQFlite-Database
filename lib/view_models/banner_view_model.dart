@@ -15,12 +15,11 @@ class SingleBannerViewModel extends ChangeNotifier {
 
   Future<void> fetchSingleBanner() async {
     _isLoading = true;
-    notifyListeners();
 
     try {
       _singleBanner = await _repository.fetchSingleBanner();
     } catch (error) {
-      // Handle error appropriately.
+      //
     } finally {
       _isLoading = false;
       notifyListeners();

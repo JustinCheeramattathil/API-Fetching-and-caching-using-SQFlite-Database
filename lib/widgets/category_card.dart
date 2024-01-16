@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:webandcrafts/view_models/product_view_model.dart';
 import 'package:webandcrafts/widgets/custom_button.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
+  final String productName;
+  final String productImage;
+  final int productRating;
+  final String actualPrice;
+  final String offerPrice;
+  final String discount;
+  const CategoryCard({
+    super.key,
+    required this.productImage,
+    required this.productName,
+    required this.productRating,
+    required this.actualPrice,
+    required this.offerPrice,
+    required this.discount,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +40,10 @@ class CategoryCard extends StatelessWidget {
               Container(
                 height: 110,
                 width: 160,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdGVkJEwnLACfecMwUDRSxr6ntKR-4gBa30g'),
-                        fit: BoxFit.cover),
-                    borderRadius: BorderRadius.only(
+                        image: NetworkImage(productImage), fit: BoxFit.cover),
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)),
                     color: Colors.white),

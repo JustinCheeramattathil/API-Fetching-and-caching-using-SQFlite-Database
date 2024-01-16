@@ -7,8 +7,8 @@ class ProductViewModel extends ChangeNotifier {
 
   ProductViewModel(this._repository);
 
-  Product? _products;
-  Product? get products => _products;
+  List<Product>? _products;
+  List<Product>? get products => _products;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;

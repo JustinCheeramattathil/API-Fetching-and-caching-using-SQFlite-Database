@@ -8,20 +8,20 @@ class CategoryViewModel extends ChangeNotifier {
 
   CategoryViewModel(this._repository);
 
-  Category? _categories;
-  Category? get categories => _categories;
+  List<Category>? _categories;
+  List<Category>? get categories => _categories;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
   Future<void> fetchCategories() async {
     _isLoading = true;
-    notifyListeners();
 
     try {
       _categories = await _repository.fetchCategories();
     } catch (error) {
       // Handle error appropriately.
+      print('Error: $error');
     } finally {
       _isLoading = false;
       notifyListeners();

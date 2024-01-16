@@ -9,9 +9,12 @@ class BannerRepository {
   Future<SingleBanner> fetchSingleBanner() async {
     try {
       final response = await _dio.get(apiendpoint);
-
       if (response.statusCode == 200) {
-        return SingleBanner.fromJson(response.data);
+        final res = response.data as List;
+       
+          return SingleBanner.fromJson(res[2]);
+       
+        
       } else {
         throw Exception('Failed to load single banner');
       }

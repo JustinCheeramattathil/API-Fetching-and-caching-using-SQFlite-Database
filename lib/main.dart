@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:webandcrafts/repository/banner_repository.dart';
 import 'package:webandcrafts/repository/product_repository.dart';
-import 'package:webandcrafts/view/home_page.dart';
-
 import 'repository/category_repository.dart';
 import 'repository/slider_repository.dart';
+import 'view/home_page.dart';
 import 'view_models/banner_view_model.dart';
 import 'view_models/category_view_model.dart';
 import 'view_models/product_view_model.dart';
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'WebandCrafts',
-        home: HomePage(),
+        home: RootPage(),
       ),
     );
   }

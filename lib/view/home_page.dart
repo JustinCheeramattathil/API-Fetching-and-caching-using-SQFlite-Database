@@ -9,8 +9,8 @@ import 'package:webandcrafts/view/screens/home_screen.dart';
 import 'package:webandcrafts/view/screens/offer_screen.dart';
 import 'package:webandcrafts/view/screens/profile_screen.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class RootPage extends StatelessWidget {
+  RootPage({super.key});
 
   List<Widget> widgets = [
     const HomeScreen(),

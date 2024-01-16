@@ -7,8 +7,8 @@ class SliderBannerViewModel extends ChangeNotifier {
 
   SliderBannerViewModel(this._repository);
 
-  SliderBanner? _sliderBanner;
-  SliderBanner? get sliderBanner => _sliderBanner;
+  List<SliderBanner>? _sliderBanner;
+ List<SliderBanner>?  get sliderBanner => _sliderBanner;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
