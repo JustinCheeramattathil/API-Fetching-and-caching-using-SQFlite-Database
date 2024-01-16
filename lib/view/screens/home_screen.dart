@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webandcrafts/widgets/category_card.dart';
 import 'package:webandcrafts/widgets/category_widget.dart';
-import 'package:webandcrafts/widgets/custom_button.dart';
 import 'package:webandcrafts/widgets/upper_ui_component.dart';
 
 class HomeScreen extends StatelessWidget {
