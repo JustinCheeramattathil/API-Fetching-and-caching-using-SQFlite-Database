@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'package:webandcrafts/utils/colors.dart';
 import 'package:webandcrafts/widgets/custom_searchfield.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class UpperUiComponent extends StatelessWidget {
+  const UpperUiComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-        body: SafeArea(
-      child: Column(
-        children: [
-          Container(
+    return  Container(
             height: size.height * 0.12,
             width: double.infinity,
             color: primaryColor,
@@ -50,9 +45,6 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
-          )
-        ],
-      ),
-    ));
+          );
   }
 }

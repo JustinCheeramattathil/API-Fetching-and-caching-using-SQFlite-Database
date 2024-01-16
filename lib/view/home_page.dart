@@ -3,11 +3,11 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:webandcrafts/utils/colors.dart';
-import 'package:webandcrafts/view/widgets/cart_screen.dart';
-import 'package:webandcrafts/view/widgets/category_screen.dart';
-import 'package:webandcrafts/view/widgets/home_screen.dart';
-import 'package:webandcrafts/view/widgets/offer_screen.dart';
-import 'package:webandcrafts/view/widgets/profile_screen.dart';
+import 'package:webandcrafts/view/screens/cart_screen.dart';
+import 'package:webandcrafts/view/screens/category_screen.dart';
+import 'package:webandcrafts/view/screens/home_screen.dart';
+import 'package:webandcrafts/view/screens/offer_screen.dart';
+import 'package:webandcrafts/view/screens/profile_screen.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});

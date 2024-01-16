@@ -10,8 +10,14 @@ class CustomSearchField extends StatelessWidget {
     return Container(
       height: 40,
       width: size.width * 0.65,
-      decoration: BoxDecoration(
-          color: scaffoldColor, borderRadius: BorderRadius.circular(15)),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: const Color.fromARGB(255, 102, 102, 102).withOpacity(0.5),
+          spreadRadius: 2,
+          blurRadius: 2,
+          offset: const Offset(0, 3), 
+        ),
+      ], color: scaffoldColor, borderRadius: BorderRadius.circular(15)),
       child: const Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
