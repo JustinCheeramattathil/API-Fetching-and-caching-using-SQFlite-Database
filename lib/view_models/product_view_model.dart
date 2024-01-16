@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/product_model.dart';
+import '../models/product_model/product_model.dart';
 import '../repository/product_repository.dart';
 
 class ProductViewModel extends ChangeNotifier {
@@ -15,7 +15,6 @@ class ProductViewModel extends ChangeNotifier {
 
   Future<void> fetchProducts() async {
     _isLoading = true;
-    notifyListeners();
 
     try {
       _products = await _repository.fetchProducts();

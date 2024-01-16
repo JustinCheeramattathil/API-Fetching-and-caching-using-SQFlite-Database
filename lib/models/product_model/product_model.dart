@@ -1,9 +1,18 @@
+import 'package:hive/hive.dart';
+part 'product_model.g.dart';
+@HiveType(typeId: 0)
 class Product {
+  @HiveField(0)
   final String productName;
+  @HiveField(1)
   final String productImage;
+  @HiveField(2)
   final int productRating;
+  @HiveField(3)
   final String actualPrice;
+  @HiveField(4)
   final String offerPrice;
+  @HiveField(5)
   final String discount;
 
   Product({

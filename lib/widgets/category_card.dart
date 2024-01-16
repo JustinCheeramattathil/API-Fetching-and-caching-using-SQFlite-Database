@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:webandcrafts/view_models/product_view_model.dart';
 import 'package:webandcrafts/widgets/custom_button.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -51,22 +49,18 @@ class CategoryCard extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const CustomButton(
-                text: 'Sales 65% off',
+              CustomButton(
+                text: discount,
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                'Motul 5100 10W40 4-Stroke Motor',
+                productName,
                 style: GoogleFonts.poppins(
                     fontSize: 6, fontWeight: FontWeight.w500),
               ),
-              Text(
-                'cycle Engine Oil 1 Litre',
-                style: GoogleFonts.poppins(
-                    fontSize: 6, fontWeight: FontWeight.w500),
-              ),
+              
               const Row(
                 children: [
                   Icon(
@@ -94,15 +88,15 @@ class CategoryCard extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Row(
+              Row(
                 children: [
-                  Text('₹100'),
-                  SizedBox(
+                  Text(offerPrice),
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(
-                    '₹200',
-                    style: TextStyle(
+                    actualPrice,
+                    style: const TextStyle(
                       color: Colors.grey,
                       decoration: TextDecoration.lineThrough,
                       decorationColor: Colors.grey,

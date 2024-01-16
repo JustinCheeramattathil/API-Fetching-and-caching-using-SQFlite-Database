@@ -13,7 +13,7 @@ class CategoryWidget extends StatelessWidget {
         height: 165,
         width: 187,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 2),
+            border: Border.all(color: Colors.grey, width: 3),
             borderRadius: BorderRadius.circular(30)),
         child: Column(
           children: [
@@ -21,9 +21,9 @@ class CategoryWidget extends StatelessWidget {
               height: 120,
               width: 190,
               decoration: BoxDecoration(
-                  color: Colors.red,
                   image: DecorationImage(
-                      image: NetworkImage(imageUrl), fit: BoxFit.cover),
+                    image: NetworkImage(imageUrl),
+                  ),
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),

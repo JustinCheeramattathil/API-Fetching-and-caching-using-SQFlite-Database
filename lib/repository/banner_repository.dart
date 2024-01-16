@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:webandcrafts/core/api_constants.dart';
 
-import '../models/single_banner_model.dart';
+import '../models/single_banner_model/single_banner_model.dart';
 
 class BannerRepository {
   final Dio _dio;

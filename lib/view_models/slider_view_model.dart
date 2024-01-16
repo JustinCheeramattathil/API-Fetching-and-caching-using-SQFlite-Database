@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/slider_banner_model.dart';
+import '../models/slider_banner_model/slider_banner_model.dart';
 import '../repository/slider_repository.dart';
 
 class SliderBannerViewModel extends ChangeNotifier {
@@ -8,14 +8,13 @@ class SliderBannerViewModel extends ChangeNotifier {
   SliderBannerViewModel(this._repository);
 
   List<SliderBanner>? _sliderBanner;
- List<SliderBanner>?  get sliderBanner => _sliderBanner;
+  List<SliderBanner>? get sliderBanner => _sliderBanner;
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
   Future<void> fetchSliderBanner() async {
     _isLoading = true;
-    notifyListeners();
 
     try {
       _sliderBanner = await _repository.fetchSliderBanner();

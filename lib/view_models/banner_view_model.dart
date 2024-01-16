@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webandcrafts/models/single_banner_model.dart';
+import 'package:webandcrafts/models/single_banner_model/single_banner_model.dart';
 import 'package:webandcrafts/repository/banner_repository.dart';
 
 class SingleBannerViewModel extends ChangeNotifier {

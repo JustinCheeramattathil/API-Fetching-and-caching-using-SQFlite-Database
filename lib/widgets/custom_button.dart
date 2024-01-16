@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(6), color: buttonColor),
       child: Center(
         child: Text(
-          text,
+          'Sales $text',
           style: GoogleFonts.poppins(fontSize: 7),
         ),
       ),

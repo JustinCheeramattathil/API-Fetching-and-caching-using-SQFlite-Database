@@ -42,8 +42,7 @@ class HomeScreen extends StatelessWidget {
                             width: double.infinity,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: NetworkImage(e.imageUrls
-                                    ),
+                                image: NetworkImage(e.imageUrls),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -97,14 +96,14 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: value.products!.length,
                     itemBuilder: (context, index) {
-                      return const Center(
+                      return Center(
                         child: CategoryCard(
-                          actualPrice: '',
-                          discount: '',
-                          offerPrice: '',
-                          productImage: '',
-                          productName: '',
-                          productRating: 1,
+                          actualPrice: value.products![index].actualPrice,
+                          discount: value.products![index].discount,
+                          offerPrice: value.products![index].offerPrice,
+                          productImage: value.products![index].productImage,
+                          productName: value.products![index].productName,
+                          productRating: value.products![index].productRating,
                         ),
                       );
                     },
@@ -160,8 +159,9 @@ class HomeScreen extends StatelessWidget {
                 builder: (context, viewmodel, child) {
                   if (viewmodel.isLoading) {
                     return const Center(child: CircularProgressIndicator());
-                  } else if (viewmodel.categories != null) {
+                  } else if (viewmodel.categories == null) {
                     viewmodel.fetchCategories();
+                  } else {
                     return ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: viewmodel.categories!.length,
@@ -200,26 +200,25 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 280,
               width: double.infinity,
-              child:
-                  Consumer<ProductViewModel>(builder: (context, value, child) {
+              child: Consumer<ProductViewModel>(builder: (context, value, _) {
                 if (value.isLoading) {
                   return const Center(child: CircularProgressIndicator());
-                } else if (value.products!.isEmpty) {
-                   value.fetchProducts();
+                } else if (value.products == null) {
+                  value.fetchProducts();
                   return const Text('No data available');
                 } else {
                   return ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: value.products!.length,
                     itemBuilder: (context, index) {
-                      return const Center(
+                      return Center(
                         child: CategoryCard(
-                          actualPrice: '',
-                          discount: '',
-                          offerPrice: '',
-                          productImage: '',
-                          productName: '',
-                          productRating: 1,
+                          actualPrice: value.products![index].actualPrice,
+                          discount: value.products![index].discount,
+                          offerPrice: value.products![index].offerPrice,
+                          productImage: value.products![index].productImage,
+                          productName: value.products![index].productName,
+                          productRating: value.products![index].productRating,
                         ),
                       );
                     },

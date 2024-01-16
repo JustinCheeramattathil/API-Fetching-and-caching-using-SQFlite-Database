@@ -1,4 +1,9 @@
+import 'package:hive/hive.dart';
+part 'slider_banner_model.g.dart';
+
+@HiveType(typeId: 0)
 class SliderBanner {
+  @HiveField(0)
   String imageUrls;
 
   SliderBanner({
