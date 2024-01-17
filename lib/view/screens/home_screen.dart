@@ -1,15 +1,10 @@
-import 'dart:developer';
-
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webandcrafts/repository/banner_repository.dart';
 import 'package:webandcrafts/view_models/banner_view_model.dart';
 import 'package:webandcrafts/view_models/category_view_model.dart';
 import 'package:webandcrafts/view_models/product_view_model.dart';
-import 'package:webandcrafts/view_models/slider_view_model.dart';
+import 'package:webandcrafts/widgets/carousel_slider.dart';
 import 'package:webandcrafts/widgets/category_card.dart';
 import 'package:webandcrafts/widgets/category_widget.dart';
 import 'package:webandcrafts/widgets/upper_ui_component.dart';
@@ -20,52 +15,13 @@ class HomeScreen extends StatelessWidget {
   @override
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
         body: SafeArea(
       child: SingleChildScrollView(
         child: Column(
           children: [
             const UpperUiComponent(),
-            Consumer<SliderBannerViewModel>(
-              builder: (context, value, child) {
-                if (value.isLoading) {
-                  return const CircularProgressIndicator();
-                } else if (value.sliderBanner == null) {
-                  value.fetchSliderBanner();
-
-                  return const Text('No data available');
-                } else {
-                  return CarouselSlider(
-                    items: value.sliderBanner!
-                        .map(
-                          (e) => Container(
-                            height: size.height * 0.19,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(e.imageUrls),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
-                    options: CarouselOptions(
-                      height: size.height * 0.19,
-                      enlargeCenterPage: false,
-                      autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 3),
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      pauseAutoPlayOnTouch: true,
-                      onPageChanged: (index, reason) {},
-                    ),
-                  );
-                }
-              },
-            ),
+            const Carousel(),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
