@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/slider_banner_model/slider_banner_model.dart';
+import '../models/slider_banner_model.dart';
 import '../repository/slider_repository.dart';
 
 class SliderBannerViewModel extends ChangeNotifier {

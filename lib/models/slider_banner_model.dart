@@ -1,9 +1,4 @@
-import 'package:hive/hive.dart';
-part 'slider_banner_model.g.dart';
-
-@HiveType(typeId: 0)
 class SliderBanner {
-  @HiveField(0)
   String imageUrls;
 
   SliderBanner({
@@ -14,5 +9,15 @@ class SliderBanner {
     return SliderBanner(
       imageUrls: json['image_url'],
     );
+  }
+  factory SliderBanner.fromMap(Map<String, dynamic> map) {
+    return SliderBanner(
+      imageUrls: map['image_url'],
+    );
+  }
+  Map<String, dynamic> toMap() {
+    return {
+      'imageUrls': imageUrls,
+    };
   }
 }

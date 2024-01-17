@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webandcrafts/utils/colors.dart';
 
+
+
+//Made a custom button to use in the category card
 class CustomButton extends StatelessWidget {
   final String text;
   const CustomButton({super.key, required this.text});

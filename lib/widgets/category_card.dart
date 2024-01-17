@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webandcrafts/widgets/custom_button.dart';
 
+//It is the Main Item Card in homescreen contains sales offer,star rating,and current market rate etc.
 class CategoryCard extends StatelessWidget {
-  final String productName;
-  final String productImage;
-  final int productRating;
-  final String actualPrice;
-  final String offerPrice;
-  final String discount;
+  final String productName;//specifies Product name
+  final String productImage;//Specifies Product images from API
+  final int productRating;//Specifies the Product Rating
+  final String actualPrice;//Specifies the current price
+  final String offerPrice;//Specifies the  offer price of the product
+  final String discount;//Specifies the discount
   const CategoryCard({
     super.key,
     required this.productImage,

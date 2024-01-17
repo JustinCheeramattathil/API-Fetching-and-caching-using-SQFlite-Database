@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+//Common colors used in the app's UI
 const Color primaryColor = Color.fromRGBO(146, 200, 72, 1.0);
 const Color scaffoldColor = Colors.white;
 const Color bottomnavColor = Color.fromRGBO(220, 220, 220, 1.0);

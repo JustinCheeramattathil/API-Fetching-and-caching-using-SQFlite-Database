@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:webandcrafts/utils/colors.dart';
 
+
+//Custom search field that we can see in the upper UI component
 class CustomSearchField extends StatelessWidget {
   const CustomSearchField({super.key});
 

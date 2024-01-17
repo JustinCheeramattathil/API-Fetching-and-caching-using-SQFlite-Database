@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webandcrafts/models/single_banner_model/single_banner_model.dart';
+import 'package:webandcrafts/models/single_banner_model.dart';
 import 'package:webandcrafts/repository/banner_repository.dart';
 
 class SingleBannerViewModel extends ChangeNotifier {
@@ -18,8 +18,10 @@ class SingleBannerViewModel extends ChangeNotifier {
 
     try {
       _singleBanner = await _repository.fetchSingleBanner();
+
     } catch (error) {
-      //
+      print('Error fetching and storing data: $error');
+
     } finally {
       _isLoading = false;
       notifyListeners();

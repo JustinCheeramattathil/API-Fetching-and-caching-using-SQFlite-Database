@@ -1,11 +1,5 @@
-import 'package:hive/hive.dart';
-part 'category_model.g.dart';
-
-@HiveType(typeId: 0)
 class Category {
-  @HiveField(0)
   final String title;
-  @HiveField(1)
   final String imageUrl;
 
   Category({
@@ -18,5 +12,17 @@ class Category {
       title: json['title'],
       imageUrl: json['image_url'],
     );
+  }
+  factory Category.fromMap(Map<String, dynamic> map) {
+    return Category(
+      title: map['title'],
+      imageUrl: map['image_url'],
+    );
+  }
+  Map<String, dynamic> toMap() {
+    return {
+      'title': title,
+      'image_url': imageUrl,
+    };
   }
 }

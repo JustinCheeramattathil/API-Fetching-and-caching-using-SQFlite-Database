@@ -51,8 +51,8 @@ class RootPage extends StatelessWidget {
           ),
           CurvedNavigationBarItem(
             child: SizedBox(
-                height: 50,
-                width: 50,
+                height: 35,
+                width: 35,
                 child: Image.asset('assets/images/offer.png')),
             label: 'Offer',
           ),

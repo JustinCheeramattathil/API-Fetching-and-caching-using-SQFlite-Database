@@ -1,9 +1,4 @@
-import 'package:hive/hive.dart';
-part 'single_banner_model.g.dart';
-
-@HiveType(typeId: 0)
 class SingleBanner {
-  @HiveField(0)
   String imageUrl;
 
   SingleBanner({
@@ -14,5 +9,16 @@ class SingleBanner {
     return SingleBanner(
       imageUrl: json['image_url'],
     );
+  }
+  factory SingleBanner.fromMap(Map<String, dynamic> map) {
+    return SingleBanner(
+      imageUrl: map['image'] as String,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'image': imageUrl,
+    };
   }
 }

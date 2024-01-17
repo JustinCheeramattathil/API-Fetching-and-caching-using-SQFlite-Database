@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webandcrafts/repository/banner_repository.dart';
 import 'package:webandcrafts/view_models/banner_view_model.dart';
 import 'package:webandcrafts/view_models/category_view_model.dart';
 import 'package:webandcrafts/view_models/product_view_model.dart';
@@ -117,7 +119,6 @@ class HomeScreen extends StatelessWidget {
                   return const CircularProgressIndicator();
                 } else if (value.singleBanner == null) {
                   value.fetchSingleBanner();
-
                   return const Text('No data available');
                 } else {
                   return Padding(

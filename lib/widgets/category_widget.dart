@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+ //Shows the categories in the home Screen 
 class CategoryWidget extends StatelessWidget {
   final String text;
   final String imageUrl;

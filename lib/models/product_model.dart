@@ -1,18 +1,9 @@
-import 'package:hive/hive.dart';
-part 'product_model.g.dart';
-@HiveType(typeId: 0)
 class Product {
-  @HiveField(0)
   final String productName;
-  @HiveField(1)
   final String productImage;
-  @HiveField(2)
   final int productRating;
-  @HiveField(3)
   final String actualPrice;
-  @HiveField(4)
   final String offerPrice;
-  @HiveField(5)
   final String discount;
 
   Product({
@@ -33,5 +24,25 @@ class Product {
       offerPrice: json['offer_price'],
       discount: json['discount'],
     );
+  }
+  factory Product.fromMap(Map<String, dynamic> map) {
+    return Product(
+      productName: map['product_name'],
+      productImage: map['product_image'],
+      productRating: map['product_rating'],
+      actualPrice: map['actual_price'],
+      offerPrice: map['offer_price'],
+      discount: map['discount'],
+    );
+  }
+  Map<String, dynamic> toMap() {
+    return {
+      'productName': productName,
+      'productImage': productImage,
+      'productRating': productRating,
+      'actualPrice': actualPrice,
+      'offerPrice': offerPrice,
+      'discount': discount
+    };
   }
 }
